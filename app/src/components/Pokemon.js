@@ -23,9 +23,15 @@ button{
 
 
 const Pokemon = ({ pokemon, isFetching, error, ...props }) => {
+  // const getRandomPokemon = () => {
+  //   return (
+  //     props.randomPokemon()
+  //   )
+  // }
+  const getRandomPokemon = props.randomPokemon
   useEffect(() => {
-    props.randomPokemon()
-  }, [])
+    getRandomPokemon()
+  }, [getRandomPokemon])
 
   //commented out things not working propely ither
   //console.log('picture', pokemon.sprites.front_default)
