@@ -14,7 +14,7 @@ export const randomPokemon = () => (dispatch) => {
   }
   const random = randomXToY(1, 898); console.log('random number working in api call')
   dispatch({ type: SET_FETCHING_POKEMON })
-  Axios.get(`http://pokeapi.co/api/v2/pokemon/${random}`)
+  Axios.get(`https://pokeapi.co/api/v2/pokemon/${random}`)
     .then(res => {
       console.log('ab: actions: randomPokemon: res', res)
       dispatch({ type: SET_POKEMON_SUCESS, payload: res.data })
