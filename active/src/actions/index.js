@@ -1,4 +1,4 @@
-// /?type=diy${activityType}
+// 
 import axios from 'axios'
 
 //action types
@@ -7,14 +7,14 @@ export const SET_BORED_SUCCESS = 'SET_BORED_SUCCESS'
 
 // actions creators
 
-
-export const activities = () => {
+//https://www.boredapi.com/api/activity/?type=diy${activityType}
+export const activities = (activityType) => {
     return (dispatch) => {
         dispatch(fetchStart())
-        axios.get(`https://www.boredapi.com/api/activity`)
+        axios.get(`https://www.boredapi.com/api/activity/?type=${activityType}`)
             .then(res => {
                 dispatch(fetchSuccess(res.data))
-                //console.log("🚀 ~ file: index.js ~ line 16 ~ activities ~ res.data", res.data)
+                console.log("🚀 ~ file: index.js ~ line 16 ~ activities ~ res.data", res.data)
             })
     }
 }
