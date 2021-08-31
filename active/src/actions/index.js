@@ -1,4 +1,4 @@
-// 
+// https://www.boredapi.com/
 import axios from 'axios'
 
 //action types

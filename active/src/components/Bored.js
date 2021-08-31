@@ -5,7 +5,6 @@ import { activities } from '../actions'
 import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
 
-
 const Bored = (props) => {
     const [options, setOptions] = useState([
         'recreational',
@@ -27,13 +26,13 @@ const Bored = (props) => {
 
     }
 
-    const currentOption = useState(options[0]);
+    const currentOption = useState(options);
     ///Fix onSelect 
     const onSelect = (evt) => {
         console.log("🚀 ~ file: Bored.js ~ line 33 ~ onSelect ~ evt", evt)
         //evt.target
         props.activities(evt)
-        //setOptions(props.activities(evt))
+        setOptions(props.activities(evt))
 
     }
 
